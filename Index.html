@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>VÉRSTEP | Every Step Makes a Statement</title>
+<style>
+:root{--black:#0d0e10;--panel:#191a1c;--gold:#d0ad78;--ivory:#f5efe4;--muted:#bcb5aa;--line:#3a342c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--ivory);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#111111ed;backdrop-filter:blur(12px);border-bottom:1px solid #34302a}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:3px;font-size:22px}.brand svg{width:42px}.navlinks{display:flex;gap:25px;color:#ddd;font-size:13px}.cart{border:1px solid var(--gold);padding:10px 14px;border-radius:30px;color:var(--gold);font-size:13px}
+.hero{padding:62px 0 58px;background:radial-gradient(ellipse at 78% 45%,#55432d 0%,#28231c 31%,#0d0e10 72%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;gap:30px}.eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;font-weight:bold}.hero h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-2px;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{color:#d1c9bd;line-height:1.7;max-width:460px;font-size:15px}.btn{display:inline-block;background:linear-gradient(110deg,#b88d55,#e0c18f);color:#17130e;padding:14px 22px;border-radius:3px;font-weight:bold;font-size:12px;letter-spacing:1px;margin-top:15px}.hero-photo{width:100%;height:360px;object-fit:cover;border-radius:5px;box-shadow:0 25px 65px #0009}
+.section{padding:70px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}.section h2{font-size:30px;margin:8px 0}.sub{color:var(--muted);font-size:13px;line-height:1.6}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.filters{display:flex;gap:9px;flex-wrap:wrap;margin:-7px 0 22px}.filter{background:transparent;border:1px solid #65533b;color:#cfc5b6;padding:9px 14px;font-size:10px;letter-spacing:1.5px;cursor:pointer;border-radius:30px}.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#15120e}.card{background:linear-gradient(155deg,#202022,#151516);border:1px solid #40382e;border-radius:9px;overflow:hidden;transition:transform .25s,border-color .25s}.card:hover{transform:translateY(-5px);border-color:var(--gold)}.card img{width:100%;height:220px;object-fit:cover;background:#29251f;transition:transform .35s}.card:hover img{transform:scale(1.035)}.card-body{padding:17px}.tag{color:var(--gold);font-size:10px;letter-spacing:2px}.card h3{margin:9px 0 5px;font-size:17px}.price{font-weight:bold;color:var(--ivory)}.card p{font-size:12px;color:var(--muted);line-height:1.5;min-height:36px}.add{width:100%;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:11px;margin-top:12px;cursor:pointer;font-weight:bold}.add:hover{background:var(--gold);color:#111}
+.promise{background:linear-gradient(110deg,#191816,#22201c);border-top:1px solid #493b29;border-bottom:1px solid #493b29}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature{padding:18px 4px}.feature b{display:block;color:var(--gold);margin:10px 0}.feature span{color:var(--muted);font-size:13px;line-height:1.6}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.about-box{border:1px solid #786044;padding:32px;background:linear-gradient(140deg,#292319,#111);border-radius:8px;box-shadow:0 18px 45px #0005}.about-box h3{font-size:24px;margin-top:0}.about-box p{color:#c9c0b4;line-height:1.8;font-size:14px}
+.contact{background:#1b1a18;text-align:center;padding:48px 20px}.contact p{color:var(--muted);font-size:14px}.footer{padding:25px 0;color:#8f887d;font-size:11px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.notice{font-size:11px;color:#b9b1a5;margin-top:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ivory);color:#111;padding:12px 18px;border-radius:4px;display:none;z-index:20;font-size:13px}
+@media(max-width:760px){.nav{height:65px}.navlinks{display:none}.hero{padding:42px 0}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-photo{height:250px}.products{grid-template-columns:1fr 1fr}.card img{height:155px}.section{padding:45px 0}.features{grid-template-columns:1fr}.section-head{display:block}}
+@media(max-width:420px){.products{grid-template-columns:1fr}.card img{height:220px}.brand{font-size:18px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#"><svg viewBox="0 0 60 45" aria-hidden="true"><path d="M4 29Q14 27 20 8l9 8q5 12 18 14 7 1 9 7H5Q1 34 4 29Z" fill="#f2eadc"/><path d="M5 37h51" stroke="#c7a36b" stroke-width="2.5"/><path d="m25 20 8 5m-12 1 8 5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>VÉRSTEP</a>
+<nav class="navlinks"><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<a class="cart" href="#shop">BAG (<span id="count">0</span>)</a>
+</div></header>
+<div style="background:#d0ad78;color:#17130e;text-align:center;padding:8px 12px;font-size:10px;letter-spacing:1.4px;font-weight:bold">VÉRSTEP CONCEPT STORE · PREVIEW DEMO</div><main>
+<section class="hero"><div class="wrap hero-grid">
+<div><div class="eyebrow">AFFORDABLE PREMIUM FOOTWEAR</div><h1>YOUR STYLE.<br><span>YOUR STEP.</span></h1><p>Step into confidence with versatile footwear designed for everyday style. Discover the VÉRSTEP collection.</p><a class="btn" href="#shop">EXPLORE COLLECTION</a></div>
+<img class="hero-photo" src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=1100&q=85" alt="Featured sneaker">
+</div></section>
+<section class="section wrap" id="shop">
+<div class="section-head"><div><div class="eyebrow">THE FIRST DROP · 001</div><h2>Featured Collection</h2><div class="sub">Neutral tones. Everyday versatility. A confident finish.</div></div><div class="sub">VÉRSTEP / EST. 2026</div></div>
+<div class="filters">
+<button class="filter active" onclick="filterProducts('all',this)">ALL</button>
+<button class="filter" onclick="filterProducts('everyday',this)">EVERYDAY</button>
+<button class="filter" onclick="filterProducts('minimal',this)">MINIMAL</button>
+<button class="filter" onclick="filterProducts('signature',this)">SIGNATURE</button>
+</div>
+<div class="products">
+<article class="card" data-category="everyday"><img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85" alt="Red and white sneaker"><div class="card-body"><div class="tag">EVERYDAY</div><h3>Street One</h3><div class="price">PKR 3,499</div><p>Everyday-inspired sneaker with a clean, sporty look.</p><button class="add" onclick="addToBag('Street One')">ADD TO BAG</button></div></article>
+<article class="card" data-category="minimal"><img src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=800&q=85" alt="Classic casual shoes"><div class="card-body"><div class="tag">MINIMAL</div><h3>Classic Form</h3><div class="price">PKR 3,899</div><p>A simple silhouette made to pair with your daily outfits.</p><button class="add" onclick="addToBag('Classic Form')">ADD TO BAG</button></div></article>
+<article class="card" data-category="signature"><img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=85" alt="Modern white sneaker"><div class="card-body"><div class="tag">SIGNATURE</div><h3>Form 02</h3><div class="price">PKR 4,299</div><p>Modern styling with a versatile, confident finish.</p><button class="add" onclick="addToBag('Form 02')">ADD TO BAG</button></div></article>
+</div>
+<p class="notice">Demo prices and products are examples only. Confirm real supplier costs, sizes and stock before publishing for sales.</p>
+</section>
+<section class="promise"><div class="wrap features">
+<div class="feature"><div class="eyebrow">01 / QUALITY</div><b>Selected with care</b><span>We aim to offer footwear chosen for comfort, finish and everyday use.</span></div>
+<div class="feature"><div class="eyebrow">02 / VALUE</div><b>Style within reach</b><span>Our goal is to make great-looking footwear accessible at fair prices.</span></div>
+<div class="feature"><div class="eyebrow">03 / SERVICE</div><b>Shopping made simple</b><span>A clear size guide and helpful customer support make choosing easier.</span></div>
+</div></section>
+<section class="section wrap" id="about"><div class="about-grid">
+<div><div class="eyebrow">THE VÉRSTEP STORY</div><h2>Every step makes a statement.</h2><p class="sub">VÉRSTEP is a proposed affordable-premium footwear brand built around personal style, everyday comfort and a simple online shopping experience.</p><p class="sub">We believe good style should feel accessible. Our aim is to grow one thoughtful collection and one happy customer at a time.</p></div>
+<div class="about-box"><div class="eyebrow">OUR VISION</div><h3>Move with confidence.</h3><p>To build a trusted footwear brand that brings together considered design, fair pricing and customer-first service.</p><div class="tag">BLACK · CHAMPAGNE GOLD · IVORY</div></div>
+</div></section>
+<section class="contact" id="contact"><div class="eyebrow">LET'S CONNECT</div><h2>Questions? We're here to help.</h2><p>For product details, sizes and availability, contact the VÉRSTEP team.</p><a class="btn" href="mailto:hello@verstep.example?subject=V%C3%89RSTEP%20Enquiry">CONTACT THE BRAND</a><div class="notice">Demo contact address — replace with your real business contact before launch.</div></section>
+</main>
+<footer class="wrap footer"><span>© 2026 VÉRSTEP. CONCEPT STORE PREVIEW.</span><span>EVERY STEP MAKES A STATEMENT.</span></footer>
+<div class="toast" id="toast"></div>
+<script>
+let bag=0;
+function filterProducts(category,button){document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');document.querySelectorAll('.card').forEach(card=>{card.style.display=(category==='all'||card.dataset.category===category)?'block':'none';});}
+function addToBag(name){bag++;document.getElementById('count').textContent=bag;const t=document.getElementById('toast');t.textContent=name+' added to your demo bag';t.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display='none',2200);}
+</script>
+</body></html>
